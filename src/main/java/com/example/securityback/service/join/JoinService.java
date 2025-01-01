@@ -27,7 +27,7 @@ public class JoinService {
                     throw new CustomException(ErrorEnum.USER_EXIST);
                 });
 
-        UserEntity data = new UserEntity(username, bCryptPasswordEncoder.encode(password), Role.ROLE_USER.name());
+        UserEntity data = new UserEntity(username, bCryptPasswordEncoder.encode(password), Role.ROLE_USER.name(), "", username);
 
         return userRepository.save(data);
     }

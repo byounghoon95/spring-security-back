@@ -17,7 +17,9 @@ public class UserEntity {
 
     @Column(unique = true)
     private String username;
+    private String name;
     private String password;
+    private String email;
 
     private String role;
 
@@ -26,10 +28,15 @@ public class UserEntity {
         this.role = role;
     }
 
-    public UserEntity(String username, String password, String role) {
+    public UserEntity(String username, String password, String role, String email, String name) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.email = email;
+        this.name = name;
     }
 
+    public void setOAuthData(String email) {
+        this.email = email;
+    }
 }
